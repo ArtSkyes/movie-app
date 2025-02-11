@@ -1,9 +1,7 @@
 import { Client, Databases, ID, Query } from "appwrite";
 
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
-
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
-
 const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_ID;
 
 const client = new Client()
@@ -33,7 +31,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
       });
     }
   } catch (error) {
-    console.error(`Error updating search count: ${error}`);
+    console.error(error);
   }
 };
 
@@ -46,6 +44,6 @@ export const getTrendingMovies = async () => {
 
     return result.documents;
   } catch (error) {
-    console.error(`Error fetching trending movies: ${error}`);
+    console.error(error);
   }
 };
